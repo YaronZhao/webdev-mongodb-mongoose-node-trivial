@@ -43,7 +43,23 @@ populateDatabase = () =>
         })
         .then(response => console.log(response));
 
+createStudent = student =>
+    studentModel.create(student);
+
+createQuestion = question =>
+    questionModel.create(question);
+
+answerQuestion = (studentId, questionId, answer) => {
+    answer.student = studentId;
+    answer.question = questionId;
+    return answerModel.create(answer);
+};
+
+
 module.exports = {
     truncateDatabase,
-    populateDatabase
+    populateDatabase,
+    createStudent,
+    createQuestion,
+    answerQuestion
 };

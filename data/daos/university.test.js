@@ -1,7 +1,7 @@
 require('../db')();
 var dao = require('./university.dao.server');
 
-// dao.truncateDatabase();
+dao.truncateDatabase();
 
 //dao.populateDatabase();
 
@@ -45,3 +45,15 @@ var dao = require('./university.dao.server');
 // dao.findAnswersByStudent(123).then(response => console.log(response));
 
 // dao.findAnswersByQuestion(321).then(response => console.log(response));
+
+// dao.updateStudent(123, {"scholarship": 18000}).then(response => console.log(response));
+
+// dao.updateQuestion(321, {"points": 5}).then(response => console.log(response));
+
+// dao.updateAnswer(123, {"trueFalseAnswer": false}).then(response => console.log(response));
+
+// dao.deleteStudent(123).then(response => console.log(response));
+
+// dao.deleteQuestion(321).then(response => console.log(response));
+
+// dao.deleteAnswer(678).then(response => console.log(response));

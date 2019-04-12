@@ -38,7 +38,7 @@ populateDatabase = () =>
             return questionModel.insertMany(questions)
         })
         .then(response => {
-            console.log(response)
+            console.log(response);
             return answerModel.insertMany(answers)
         })
         .then(response => console.log(response));
@@ -79,6 +79,54 @@ findAnswersByStudent = studentId =>
 findAnswersByQuestion = questionId =>
     answerModel.find({question: questionId});
 
+updateStudent = (studentId, student) =>
+    studentModel.updateOne({_id: studentId}, {$set: student})
+        .then(response => {
+            console.log(response);
+            return findStudentById(studentId)
+        });
+
+updateQuestion = (questionId, question) =>
+    questionModel.updateOne({_id: questionId}, {$set: question})
+        .then(response => {
+            console.log(response);
+            return findQuestionById(questionId)
+        });
+
+updateAnswer = (answerId, answer) =>
+    answerModel.updateOne({_id: answerId}, {$set: answer})
+        .then(response => {
+            console.log(response);
+            return findAnswerById(answerId)
+        });
+
+deleteStudent = studentId =>
+    studentModel.deleteOne({_id: studentId})
+        .then(() => {
+            return answerModel.deleteMany({student: studentId})
+        })
+        .then(response => {
+            console.log(response);
+            return findAllStudents()
+        });
+
+deleteQuestion = questionId =>
+    questionModel.deleteOne({_id: questionId})
+        .then(() => {
+            return answerModel.deleteMany({question: questionId})
+        })
+        .then(response => {
+            console.log(response);
+            return findAllQuestions()
+        });
+
+deleteAnswer = answerId =>
+    answerModel.deleteOne({_id: answerId})
+        .then(response => {
+            console.log(response);
+            return findAllAnswers()
+        });
+
 module.exports = {
     truncateDatabase,
     populateDatabase,
@@ -92,5 +140,11 @@ module.exports = {
     findAllAnswers,
     findAnswerById,
     findAnswersByStudent,
-    findAnswersByQuestion
+    findAnswersByQuestion,
+    updateStudent,
+    updateQuestion,
+    updateAnswer,
+    deleteStudent,
+    deleteQuestion,
+    deleteAnswer
 };

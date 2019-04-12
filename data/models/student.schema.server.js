@@ -1,5 +1,5 @@
-const mongoose = required('mongoose');
-const studentSchema = mongoose.Schema({
+const mongoose = require('mongoose');
+module.exports = mongoose.Schema({
     _id: Number,
     username: {type: String, required: true},
     password: {type: String, required: true},
@@ -8,4 +8,3 @@ const studentSchema = mongoose.Schema({
     gradYear: Number,
     scholarship: {type: Number, min: 0}
 }, {collection: 'students'});
-module.exports = studentSchema;

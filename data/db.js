@@ -3,5 +3,5 @@ module.exports = function () {
     const databaseName = 'white-board';
     var connectionString = 'mongodb://localhost/';
     connectionString += databaseName;
-    mongoose.connect(connectionString);
+    mongoose.connect(connectionString, { useNewUrlParser: true });
 };

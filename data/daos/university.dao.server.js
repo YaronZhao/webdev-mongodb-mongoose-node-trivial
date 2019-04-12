@@ -55,11 +55,42 @@ answerQuestion = (studentId, questionId, answer) => {
     return answerModel.create(answer);
 };
 
+findAllStudents = () =>
+    studentModel.find();
+
+findStudentById = studentId =>
+    studentModel.findById(studentId);
+
+findAllQuestions = () =>
+    questionModel.find();
+
+findQuestionById = questionId =>
+    questionModel.findById(questionId);
+
+findAllAnswers = () =>
+    answerModel.find();
+
+findAnswerById = answerId =>
+    answerModel.findById(answerId);
+
+findAnswersByStudent = studentId =>
+    answerModel.find({student: studentId});
+
+findAnswersByQuestion = questionId =>
+    answerModel.find({question: questionId});
 
 module.exports = {
     truncateDatabase,
     populateDatabase,
     createStudent,
     createQuestion,
-    answerQuestion
+    answerQuestion,
+    findAllStudents,
+    findStudentById,
+    findAllQuestions,
+    findQuestionById,
+    findAllAnswers,
+    findAnswerById,
+    findAnswersByStudent,
+    findAnswersByQuestion
 };

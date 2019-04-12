@@ -29,3 +29,19 @@ var dao = require('./university.dao.server');
 //     "_id": 222,
 //     "trueFalseAnswer": false
 // }).then(response => console.log(response));
+
+// dao.findAllStudents().then(response => console.log(response));
+
+// dao.findStudentById(234).then(response => console.log(response));
+
+// dao.findAllQuestions().then(response => console.log(response));
+
+// dao.findQuestionById(432).then(response => console.log(response));
+
+// dao.findAllAnswers().then(response => console.log(response));
+
+// dao.findAnswerById(123).then(response => console.log(response));
+
+// dao.findAnswersByStudent(123).then(response => console.log(response));
+
+// dao.findAnswersByQuestion(321).then(response => console.log(response));

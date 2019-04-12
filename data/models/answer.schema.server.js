@@ -1,15 +1,13 @@
 const mongoose = require('mongoose');
-const studentSchema = require('./student.schema.server');
-const questionSchema = require('./question.schema.server');
 module.exports = mongoose.Schema({
     _id: Number,
     student: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: studentSchema
+        type: Number,
+        ref: 'StudentModel'
     },
     question: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: questionSchema
+        type: Number,
+        ref: 'QuestionModel'
     },
     trueFalseAnswer: Boolean,
     multipleChoiceAnswer: Number

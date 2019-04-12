@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const studentSchema = require('student.schema.server');
-const questionSchema = require('question.schema.server');
+const studentSchema = require('./student.schema.server');
+const questionSchema = require('./question.schema.server');
 module.exports = mongoose.Schema({
     _id: Number,
     student: {

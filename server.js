@@ -8,4 +8,4 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./services/university.service.server')(app);
 
-app.listen(3000);
+app.listen(process.env.PORT || 5000);

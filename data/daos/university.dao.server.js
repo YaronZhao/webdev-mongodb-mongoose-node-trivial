@@ -79,25 +79,31 @@ findAnswersByStudent = studentId =>
 findAnswersByQuestion = questionId =>
     answerModel.find({question: questionId});
 
+findAllAnswersByStudent = (studentId, questionId) =>
+    answerModel.find({student: studentId, question: questionId});
+
+findAllAnswersByQuestion = (questionId, studentId) =>
+    answerModel.find({question: questionId, student: studentId});
+
 updateStudent = (studentId, student) =>
     studentModel.updateOne({_id: studentId}, {$set: student})
         .then(response => {
             console.log(response);
-            return findStudentById(studentId)
+            return studentModel.findOne({_id: studentId})
         });
 
 updateQuestion = (questionId, question) =>
     questionModel.updateOne({_id: questionId}, {$set: question})
         .then(response => {
             console.log(response);
-            return findQuestionById(questionId)
+            return questionModel.findOne({_id: questionId})
         });
 
 updateAnswer = (answerId, answer) =>
     answerModel.updateOne({_id: answerId}, {$set: answer})
         .then(response => {
             console.log(response);
-            return findAnswerById(answerId)
+            return answerModel.findOne({_id: answerId})
         });
 
 deleteStudent = studentId =>
@@ -107,7 +113,7 @@ deleteStudent = studentId =>
         })
         .then(response => {
             console.log(response);
-            return findAllStudents()
+            return studentModel.find()
         });
 
 deleteQuestion = questionId =>
@@ -117,14 +123,14 @@ deleteQuestion = questionId =>
         })
         .then(response => {
             console.log(response);
-            return findAllQuestions()
+            return questionModel.find()
         });
 
 deleteAnswer = answerId =>
     answerModel.deleteOne({_id: answerId})
         .then(response => {
             console.log(response);
-            return findAllAnswers()
+            return answerModel.find()
         });
 
 module.exports = {
@@ -141,6 +147,8 @@ module.exports = {
     findAnswerById,
     findAnswersByStudent,
     findAnswersByQuestion,
+    findAllAnswersByStudent,
+    findAllAnswersByQuestion,
     updateStudent,
     updateQuestion,
     updateAnswer,

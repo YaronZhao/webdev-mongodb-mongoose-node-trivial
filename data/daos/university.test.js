@@ -3,7 +3,7 @@ var dao = require('./university.dao.server');
 
 dao.truncateDatabase();
 
-//dao.populateDatabase();
+// dao.populateDatabase();
 
 // dao.createStudent({
 //     "_id": 345,
@@ -45,6 +45,10 @@ dao.truncateDatabase();
 // dao.findAnswersByStudent(123).then(response => console.log(response));
 
 // dao.findAnswersByQuestion(321).then(response => console.log(response));
+
+// dao.findAllAnswersByStudent(123, 321).then(response => console.log(response));
+
+// dao.findAllAnswersByQuestion(321, 123).then(response => console.log(response));
 
 // dao.updateStudent(123, {"scholarship": 18000}).then(response => console.log(response));
 

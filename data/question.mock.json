@@ -5,6 +5,7 @@
     "points": 10,
     "questionType": "TRUE_FALSE",
     "trueFalse": {
+      "_id": 321,
       "isTrue": false
     }
   },
@@ -14,6 +15,7 @@
     "points": 10,
     "questionType": "TRUE_FALSE",
     "trueFalse": {
+      "_id": 432,
       "isTrue": false
     }
   },
@@ -23,6 +25,7 @@
     "points": 10,
     "questionType": "MULTIPLE_CHOICE",
     "multipleChoice": {
+      "_id": 543,
       "choices": "Java Persistence API, Java Persisted Application, JavaScript Persistence API, JSON Persistent Associations",
       "correct": 1
     }
@@ -33,6 +36,7 @@
     "points": 10,
     "questionType": "MULTIPLE_CHOICE",
     "multipleChoice": {
+      "_id": 654,
       "choices": "Object Relational Model, Object Relative Markup, Object Reflexive Model, Object Relational Mapping",
       "correct": 4
     }
